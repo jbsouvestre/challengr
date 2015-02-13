@@ -1,0 +1,22 @@
+{
+  "name": "challengr",
+  "version": "1.0.0",
+  "description": "Challanger App",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "gulp test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jbsouvestre/challengr.git"
+  },
+  "author": "jb@remotium.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jbsouvestre/challengr/issues"
+  },
+  "homepage": "https://github.com/jbsouvestre/challengr",
+  "devDependencies": {
+    "webpack": "^1.5.3"
+  }
+}
