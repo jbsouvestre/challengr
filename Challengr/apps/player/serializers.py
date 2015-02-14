@@ -10,3 +10,4 @@ class PlayerSerializer(serializers.ModelSerializer):
         model = Player
         fields = ("id", "owner", "type", "name", "created_at",
                   "wins", "losses", "draws", "games")
+        read_only_fields = ("wins", "losses", "draws", "games", "created_at", "owner", "type")

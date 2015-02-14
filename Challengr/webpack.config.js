@@ -5,12 +5,12 @@ var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
     cache: true,
-    entry: path.join(__dirname, 'public', 'js', 'public'),
+    entry: path.join(__dirname, 'public', 'js', 'app'),
     output: {
-        path: path.join(__dirname, 'static'),
+        path: path.join(__dirname, 'static', 'js'),
         publicPath: 'static/',
-        filename: '[name].js',
-        chunkFileName: '[chunkhash].js'
+        filename: '[name].[hash].js',
+        chunkFilename: '[chunkhash].js'
     },
     module: {
         loaders: [{
