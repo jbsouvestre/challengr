@@ -17,11 +17,12 @@ let App = new Application({
 });
 
 App.addInitializer(() => {
+	App.AppRegion.show(Layout);
+	
 	App.Router = new Router({
 		controller: new Controller()
 	});
 	
-	App.AppRegion.show(Layout);
 	
 	history.start(HistoryOptions);
 

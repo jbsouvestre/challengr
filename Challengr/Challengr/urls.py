@@ -23,7 +23,7 @@ urlpatterns = patterns('',
 
                        url(r'^api/account/this/$', ThisAccount.as_view()),
                        url(r'^api/', include(router.urls)),
-                       url(r'^.*/$', TemplateView.as_view(template_name='index.html')),
+                       url(r'^$', TemplateView.as_view(template_name='index.html')),
                        )
 
 if settings.DEBUG:
