@@ -5,12 +5,12 @@ var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
     cache: true,
-    entry: path.join(__dirname, 'public', 'js', 'public'),
+    entry: path.join(__dirname, 'public', 'js', 'app'),
     output: {
-        path: path.join(__dirname, 'static'),
-        publicPath: 'static/',
-        filename: '[name].js',
-        chunkFileName: '[chunkhash].js'
+        path: path.join(__dirname, 'static', 'js'),
+        publicPath: '/static/js/',
+        filename: '[name].[hash].js',
+        chunkFilename: '[chunkhash].js'
     },
     module: {
         loaders: [{
@@ -32,8 +32,9 @@ module.exports = {
     }, 
     plugins: [
         new HtmlWebpackPlugin({
-            template: path.join('public/index.html')
-        }), 
+            template: path.join('public/index.html'),
+            filename: '../../templates/index.html'
+        }),
         new webpack.ProvidePlugin({
             jQuery: 'jquery',
             $: 'jquery'

@@ -25,7 +25,6 @@ DEBUG = False
 
 TEMPLATE_DEBUG = False
 
-
 # Application definition
 
 INSTALLED_APPS = (
@@ -95,10 +94,9 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, "public/"),
+    os.path.join(BASE_DIR, "static/"),
 )
 ALLOWED_HOSTS = ["*"]
-
 
 LOGGING = {
     'version': 1,
@@ -126,6 +124,14 @@ LOGGING = {
     }
 }
 
+TEMPLATE_LOADERS = (
+    'django.template.loaders.filesystem.Loader',
+    'django.template.loaders.app_directories.Loader',
+)
+
+TEMPLATE_DIRS = (
+    os.path.join(BASE_DIR, "templates/"),
+)
 
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (

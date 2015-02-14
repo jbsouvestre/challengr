@@ -1,7 +1,7 @@
 var path = require('path');
 var gulp = require('gulp');
 var gutil = require('gulp-util');
-
+var rimraf = require('gulp-rimraf');
 
 var sourcemaps = require('gulp-sourcemaps');
 var sass = require('gulp-sass');
@@ -15,8 +15,12 @@ var webpackConfig = require('./webpack.config');
 
 gulp.task('default', ['webpack-dev-server']);
 
+gulp.task('clean', function(){
+    return gulp.src(['./static/css', './static/js'], { read: false})
+        .pipe(rimraf());
+});
 
-gulp.task('build-dev', ['webpack:build-dev', 'styles:dev'], function() {
+gulp.task('build-dev', ['clean', 'webpack:build-dev', 'styles:dev'], function() {
     gulp.watch(['public/**/*'], ['webpack:build-dev', 'styles:dev']);
 });
 
@@ -36,7 +40,7 @@ gulp.task('styles:dev', function(){
             browsers: ['last 2 versions']
         }))
         .pipe(sourcemaps.write())
-        .pipe(gulp.dest('static'));
+        .pipe(gulp.dest('static/css'));
 });
 
 
