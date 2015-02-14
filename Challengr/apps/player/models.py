@@ -2,12 +2,17 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.db.models.signals import post_save
 from django.db import IntegrityError
+from django.db.utils import OperationalError
 
 # Create your models here.
 
 
 PLAYER_TYPES = (("program", "program"),
                 ("user", "user"))
+
+
+def program_file_name(instance, filename):
+    return '/'.join(['program', str(instance.id)])
 
 
 class Player(models.Model):
@@ -36,6 +41,8 @@ def create_default_player(sender, instance, **kwargs):
             return
         except IntegrityError:
             i += 1
+        except OperationalError:
+            return  # Possibly while running syncdb
 
 
 # register the signal

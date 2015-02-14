@@ -19,6 +19,7 @@ class Migration(SchemaMigration):
             ('losses', self.gf('django.db.models.fields.PositiveIntegerField')(default=0)),
             ('draws', self.gf('django.db.models.fields.PositiveIntegerField')(default=0)),
             ('games', self.gf('django.db.models.fields.PositiveIntegerField')(default=0)),
+            ('program', self.gf('django.db.models.fields.files.FileField')(max_length=100)),
         ))
         db.send_create_signal(u'player', ['Player'])
 
@@ -74,6 +75,7 @@ class Migration(SchemaMigration):
             'losses': ('django.db.models.fields.PositiveIntegerField', [], {'default': '0'}),
             'name': ('django.db.models.fields.CharField', [], {'unique': 'True', 'max_length': '255'}),
             'owner': ('django.db.models.fields.related.ForeignKey', [], {'to': u"orm['auth.User']"}),
+            'program': ('django.db.models.fields.files.FileField', [], {'max_length': '100'}),
             'type': ('django.db.models.fields.CharField', [], {'max_length': '10'}),
             'wins': ('django.db.models.fields.PositiveIntegerField', [], {'default': '0'})
         }

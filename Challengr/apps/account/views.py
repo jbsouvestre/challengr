@@ -19,7 +19,7 @@ class ThisAccount(APIView):
             location = reverse("user-detail", (str(request.user.id),))
             return Response(headers={"Location": location}, status=status.HTTP_302_FOUND)
         else:
-            return Response({"detail": {"Please re-authenticate"}}, status=status.HTTP_401_UNAUTHORIZED)
+            return Response({"detail": ["Please re-authenticate"]}, status=status.HTTP_401_UNAUTHORIZED)
 
 
 class AccountViewSet(mixins.RetrieveModelMixin,
