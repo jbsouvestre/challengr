@@ -8,7 +8,7 @@ module.exports = {
     entry: path.join(__dirname, 'public', 'js', 'app'),
     output: {
         path: path.join(__dirname, 'static', 'js'),
-        publicPath: 'static/',
+        publicPath: '/static/',
         filename: '[name].[hash].js',
         chunkFilename: '[chunkhash].js'
     },
@@ -32,8 +32,9 @@ module.exports = {
     }, 
     plugins: [
         new HtmlWebpackPlugin({
-            template: path.join('public/index.html')
-        }), 
+            template: path.join('public/index.html'),
+            filename: '../../templates/index.html'
+        }),
         new webpack.ProvidePlugin({
             jQuery: 'jquery',
             $: 'jquery'
