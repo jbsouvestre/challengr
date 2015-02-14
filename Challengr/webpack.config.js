@@ -8,7 +8,7 @@ module.exports = {
     entry: path.join(__dirname, 'public', 'js', 'app'),
     output: {
         path: path.join(__dirname, 'static', 'js'),
-        publicPath: '/static/',
+        publicPath: '/static/js/',
         filename: '[name].[hash].js',
         chunkFilename: '[chunkhash].js'
     },

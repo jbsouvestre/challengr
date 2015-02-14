@@ -37,6 +37,9 @@ App.addInitializer(() => {
 
 App.start();
 
+/*for debug*/
 window.App = App;
+
+window.jQuery = $;
 
 export default App;
