@@ -6,10 +6,10 @@ import ImportPage from '../pages/importPage';
 
 
 export default Controller.extend({
-	defaultRoute(){
-		Layout.main.show( new MainPage() );
-	},
-	import(){
-		Layout.main.show( new ImportPage() );
-	}
+    defaultRoute(){
+        Layout.main.show( new MainPage() );
+    },
+    import(){
+        Layout.main.show( new ImportPage() );
+    }
 });

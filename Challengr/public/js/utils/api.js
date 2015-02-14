@@ -1,9 +1,9 @@
 var baseUrl = '/api';
 
 export default {
-	baseUrl: baseUrl,
+    baseUrl: baseUrl,
 
-	url: function(url){
-		return [ baseUrl + url ].join('/');
-	}
+    url: function(url){
+        return [ baseUrl + url ].join('/');
+    }
 };
