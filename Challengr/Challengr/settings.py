@@ -40,6 +40,7 @@ INSTALLED_APPS = (
     'raven',
     "rest_framework",
     "rest_framework.authtoken",
+    'rest_framework_swagger',
 )
 
 LOCAL_APPS = ("apps.checkers",
