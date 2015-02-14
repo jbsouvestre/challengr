@@ -7,32 +7,32 @@ import 'bootstrap';
 import $ from 'jquery';
 
 const HistoryOptions = {
-	pushState: true
+    pushState: true
 };
 
 let App = new Application({
-	regions: {
-		AppRegion: '#app'
-	}
+    regions: {
+        AppRegion: '#app'
+    }
 });
 
 App.addInitializer(() => {
-	App.AppRegion.show(Layout);
-	
-	App.Router = new Router({
-		controller: new Controller()
-	});
-	
-	
-	history.start(HistoryOptions);
+    App.AppRegion.show(Layout);
+    
+    App.Router = new Router({
+        controller: new Controller()
+    });
+    
+    
+    history.start(HistoryOptions);
 
 
-	$(document).on('click', 'a:not([data-bypass])', (e) => {
-		e.preventDefault();
-		App.Router.navigate($(e.target).attr('href'), {
-			trigger: true
-		});
-	});
+    $(document).on('click', 'a:not([data-bypass])', (e) => {
+        e.preventDefault();
+        App.Router.navigate($(e.target).attr('href'), {
+            trigger: true
+        });
+    });
 });
 
 App.start();
