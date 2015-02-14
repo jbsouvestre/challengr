@@ -6,6 +6,7 @@ from rest_framework import routers
 from rest_framework.authtoken.views import obtain_auth_token
 from apps.player.views import PlayerViewSet
 from apps.account.views import AccountViewSet, ThisAccount
+from django.views.generic.base import TemplateView
 admin.autodiscover()
 
 
@@ -22,6 +23,7 @@ urlpatterns = patterns('',
 
                        url(r'^api/account/this/$', ThisAccount.as_view()),
                        url(r'^api/', include(router.urls)),
+                       url(r'^.*/$', TemplateView.as_view(template_name='index.html')),
                        )
 
 if settings.DEBUG:
