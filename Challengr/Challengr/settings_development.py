@@ -66,3 +66,21 @@ QUERY_INSPECT_TRACEBACK_ROOTS = ['/home/utku/git/challengr']
 
 
 LOGGING["root"]["handlers"].append("console")
+
+SWAGGER_SETTINGS = {
+    'exclude_namespaces': [],
+    'api_version': '0.1',
+    'api_path': '/',
+    'enabled_methods': [
+        'get',
+        'post',
+        'put',
+        'patch',
+        'delete'
+    ],
+    'api_key': '',
+    'is_authenticated': False,
+    'is_superuser': False,
+    'permission_denied_handler': None,
+
+}
