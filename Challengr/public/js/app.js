@@ -3,6 +3,7 @@ import { Application } from 'marionette';
 import Layout from './commons/layout';
 import Router from './routes/router';
 import Controller from './routes/controller';
+import Session from './lib/Session';
 import 'bootstrap';
 import $ from 'jquery';
 
@@ -41,5 +42,7 @@ App.start();
 window.App = App;
 
 window.jQuery = $;
+
+console.log(Session.fetch());
 
 export default App;

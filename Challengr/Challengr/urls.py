@@ -23,7 +23,6 @@ urlpatterns = patterns('',
 
                        url(r'^api/account/this/$', ThisAccount.as_view()),
                        url(r'^api/', include(router.urls)),
-                       url(r'^game/$', TemplateView.as_view(template_name='index.html')),
                        )
 
 if settings.DEBUG:
@@ -43,3 +42,7 @@ if settings.DEBUG:
 
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 urlpatterns += staticfiles_urlpatterns()
+
+urlpatterns += patterns('',
+                        url(r'^', TemplateView.as_view(template_name='index.html')),
+                        )

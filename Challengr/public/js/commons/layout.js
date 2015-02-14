@@ -7,7 +7,8 @@ let Layout = LayoutView.extend({
     regions: {
         header: 'header',
         aside: 'aside',
-        main: 'main'
+        main: 'main',
+        modals: '#modals'
     },
     onRender: function(){
         this.header.show(Nav);

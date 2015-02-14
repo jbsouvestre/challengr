@@ -21,7 +21,7 @@ gulp.task('clean', function(){
 });
 
 gulp.task('build-dev', ['clean', 'webpack:build-dev', 'styles:dev'], function() {
-    gulp.watch(['public/**/*'], ['webpack:build-dev', 'styles:dev']);
+    gulp.watch(['public/**/*'], ['clean','webpack:build-dev', 'styles:dev']);
 });
 
 gulp.task('styles:dev', function(){

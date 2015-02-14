@@ -26,7 +26,7 @@ module.exports = {
         alias: {
             marionette: 'backbone.marionette',
             bootstrap: 'bootstrap-sass',
-            utils: 'utils/utils',
+            utils: __dirname + '/public/js/utils/utils',
             __templates__: __dirname + '/public/templates'
         }
     }, 
