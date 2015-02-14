@@ -137,3 +137,21 @@ REST_FRAMEWORK = {
         'rest_framework.parsers.MultiPartParser',
     ),
 }
+
+
+import djcelery
+djcelery.setup_loader()
+CELERYD_HIJACK_ROOT_LOGGER = False
+
+
+CELERY_DEFAULT_QUEUE = 'InteractiveGame'
+CELERY_QUEUES = {
+    "InteractiveGame": {
+        'exchange': "InteractiveGame",
+        'binding_key': "InteractiveGame",
+    },
+    "BackgroundGame": {
+        'exchange': "BackgroundGame",
+        'binding_key': "BackgroundGame",
+    }
+}

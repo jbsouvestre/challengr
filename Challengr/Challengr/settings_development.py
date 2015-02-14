@@ -84,3 +84,7 @@ SWAGGER_SETTINGS = {
     'permission_denied_handler': None,
 
 }
+
+
+CELERY_ALWAYS_EAGER = True
+CELERY_EAGER_PROPAGATES_EXCEPTIONS = True
