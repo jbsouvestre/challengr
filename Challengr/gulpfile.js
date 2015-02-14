@@ -17,11 +17,11 @@ gulp.task('default', ['webpack-dev-server']);
 
 
 gulp.task('build-dev', ['webpack:build-dev', 'styles:dev'], function() {
-    gulp.watch(['app/**/*'], ['webpack:build-dev', 'styles:dev']);
+    gulp.watch(['public/**/*'], ['webpack:build-dev', 'styles:dev']);
 });
 
 gulp.task('styles:dev', function(){
-    gulp.src('app/scss/**/*.scss')
+    gulp.src('public/scss/**/*.scss')
         .pipe(sourcemaps.init())
         .pipe(sass({
             includePaths: [

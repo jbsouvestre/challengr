@@ -5,7 +5,7 @@ var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
     cache: true,
-    entry: path.join(__dirname, 'app', 'js', 'app'),
+    entry: path.join(__dirname, 'public', 'js', 'public'),
     output: {
         path: path.join(__dirname, 'static'),
         publicPath: 'static/',
@@ -19,7 +19,7 @@ module.exports = {
             exclude: /node_modules/
         }, {
             test: /\.(html|hbs)$/,
-            loader:  'handlebars-loader?helperDirs[]='+__dirname+'/app/js/helpers'
+            loader:  'handlebars-loader?helperDirs[]='+__dirname+'/public/js/helpers'
         }]
     },
     resolve: {
@@ -27,12 +27,12 @@ module.exports = {
             marionette: 'backbone.marionette',
             bootstrap: 'bootstrap-sass',
             utils: 'utils/utils',
-            __templates__: __dirname + '/app/templates'
+            __templates__: __dirname + '/public/templates'
         }
     }, 
     plugins: [
         new HtmlWebpackPlugin({
-            template: path.join('app/index.html')
+            template: path.join('public/index.html')
         }), 
         new webpack.ProvidePlugin({
             jQuery: 'jquery',
