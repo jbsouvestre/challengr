@@ -97,9 +97,8 @@ STATIC_URL = '/'
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, "static/"),
 )
-print os.path.join(BASE_DIR, "static/")
-ALLOWED_HOSTS = ["*"]
 
+ALLOWED_HOSTS = ["*"]
 
 LOGGING = {
     'version': 1,
